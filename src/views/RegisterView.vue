@@ -2,12 +2,12 @@
 import { useRouter } from 'vue-router';
 
 const router = useRouter()
-function onLogin() {
-    console.log('login');
+function onRegister() {
+    console.log('register');
     router.replace('/')
 }
-function onRegister() {
-    router.replace('/auth/register')
+function onLogin() {
+    router.replace('/auth/login')
 }
 </script>
 <template>
@@ -19,7 +19,7 @@ function onRegister() {
         </div>
         <!-- Right: Login Form -->
         <div class="lg:p-36 md:p-52 sm:20 p-8 w-full lg:w-1/2">
-            <h1 class="text-2xl font-semibold mb-4">Login</h1>
+            <h1 class="text-2xl font-semibold mb-4">Register</h1>
             <form action="#" method="POST">
                 <!-- Username Input -->
                 <div class="mb-4">
@@ -31,21 +31,12 @@ function onRegister() {
                     <label for="password" class="block text-gray-600">Password</label>
                     <input type="password" id="password" name="password" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" autocomplete="off">
                 </div>
-                <!-- Remember Me Checkbox -->
-                <div class="mb-4 flex items-center">
-                    <input type="checkbox" id="remember" name="remember" class="text-blue-500">
-                    <label for="remember" class="text-gray-600 ml-2">Remember Me</label>
-                </div>
-                <!-- Forgot Password Link -->
-                <div class="mb-6 text-blue-500">
-                    <a href="#" class="hover:underline">Forgot Password?</a>
-                </div>
-                <!-- Login Button -->
-                <button type="button" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full" @click="onLogin">Login</button>
+                <!-- Register Button -->
+                <button type="button" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-md py-2 px-4 w-full" @click="onRegister">Register</button>
             </form>
-            <!-- Register Link -->
+            <!-- Login Link -->
             <div class="mt-6 text-blue-500 text-center">
-                <a href="#" @click.prevent="onRegister" class="hover:underline">Register Here</a>
+                <a href="#" @click.prevent="onLogin" class="hover:underline">Login Here</a>
             </div>
         </div>
     </div>
